@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3000 3000">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-933.68" y1="-649.83" x2="-944.38" y2="-2251.21" gradientTransform="translate(804.82 2302.69) rotate(89.84) scale(.86 1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f04923"/>
+      <stop offset=".03" stop-color="#f05121"/>
+      <stop offset=".19" stop-color="#f27e1c"/>
+      <stop offset=".36" stop-color="#f4a417"/>
+      <stop offset=".52" stop-color="#f6c014"/>
+      <stop offset=".68" stop-color="#f7d511"/>
+      <stop offset=".84" stop-color="#f7e110"/>
+      <stop offset="1" stop-color="#f8e610"/>
+    </linearGradient>
+  </defs>
+  <path d="M1059.94,1055.91s547.83-371.74,1103.03-32.19c-36.62,5.59-953.64,303.86,345.2,290.22,0,0-504.75,384.1,334.32,248.65,0,0-305.48,445.95-889.92,231.27,0,0-277.24-40.83-276.78,125.56.46,166.39,277.18,20.03,277.18,20.03,0,0-206.17,359.76-933.45,61.56l40.42-945.1Z" fill="url(#linear-gradient)" stroke="#000" stroke-miterlimit="10" stroke-width="56.97"/>
+  <g>
+    <ellipse cx="847.75" cy="1478.73" rx="687.95" ry="581.22" transform="translate(-4.12 2.37) rotate(-.16)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="66.39"/>
+    <ellipse cx="847.75" cy="1478.73" rx="687.95" ry="581.22" transform="translate(-4.12 2.37) rotate(-.16)" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="66.39"/>
+    <path d="M1163.58,1210.15l180.75-134.07s192.68,185.85,191.37,400.73l-259.65-34.49-112.47-232.17Z" stroke="#000" stroke-miterlimit="10" stroke-width="66.39"/>
+    <path d="M886.8,1152.99l-200.39,177.66-255.53-19.58s3.94-154.97,34.39-195.64c30.46-40.67,272.67-96.69,272.67-96.69l148.85,134.25Z" stroke="#000" stroke-miterlimit="10" stroke-width="66.39"/>
+    <polygon points="1093.41 1639.44 789.76 1588.63 626.51 1775.4 830.05 1942.71 1113.66 1853.37 1093.41 1639.44" stroke="#000" stroke-miterlimit="10" stroke-width="66.39"/>
+    <path d="M160.66,1449.97l133.19,49.64s46.38,188.04,98.89,226.63l-69.42,115.18s-192.53-196.02-162.65-391.45Z" stroke="#000" stroke-miterlimit="10" stroke-width="66.39"/>
+    <polygon points="1276.05 1442.32 1093.41 1639.44 789.76 1588.63 686.41 1330.65 886.8 1152.99 1163.58 1210.15 1276.05 1442.32" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="34.58"/>
+    <line x1="737.95" y1="1018.74" x2="772" y2="901.06" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="34.58"/>
+    <line x1="465.28" y1="1115.43" x2="390.84" y2="1044.57" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="34.58"/>
+    <polygon points="430.89 1311.07 293.85 1499.62 392.74 1726.25 626.51 1775.4 789.76 1588.63 686.41 1330.65 430.89 1311.07" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="34.58"/>
+    <line x1="830.05" y1="1942.71" x2="775.16" y2="2036.07" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="34.58"/>
+    <line x1="1113.66" y1="1853.37" x2="1342.9" y2="1881.83" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="34.58"/>
+  </g>
+</svg>

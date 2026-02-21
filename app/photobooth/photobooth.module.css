@@ -1,0 +1,545 @@
+/* ─────────────────────────────────────────
+  LAYOUT
+───────────────────────────────────────── */
+.photoboothcontainer {
+  background-color: #0f172a;
+  padding: 0;
+  flex: 1;
+  min-height: 70vh;
+}
+
+.container {
+  background-color: #0f172a;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  padding: 0;
+}
+
+.h1 {
+  font-size: 1.6em;
+  padding: 1rem 3vw;
+  color: #ffffff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  margin-bottom: 1.25rem;
+  width: 93%;
+  border-radius: 0 0 12px 12px;
+  letter-spacing: 0.5px;
+}
+
+/* ─────────────────────────────────────────
+  CANVAS AREA
+───────────────────────────────────────── */
+.canvasContainer {
+  position: relative;
+  width: 65vw;
+  height: 58vh;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 1024px) {
+  .photoboothbuttons {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 80vw;
+  }
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.stickerCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.emojiButton {
+  display: none;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  object-fit: cover;
+}
+
+.photobuttons {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-items: space-around;
+}
+
+/* ─────────────────────────────────────────
+   FILTER SELECT
+───────────────────────────────────────── */
+.filters {
+  font-family: "Nunito", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+  color: #ffffff;
+  background-color: rgba(26, 86, 219, 0.5);
+  border: 1.5px solid rgba(6, 182, 212, 0.6);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  appearance: none;
+}
+
+.filters:hover,
+.filters:focus {
+  background-color: rgba(26, 86, 219, 0.75);
+  border-color: #06b6d4;
+  outline: none;
+}
+
+/* ─────────────────────────────────────────
+   ACTION BUTTONS
+───────────────────────────────────────── */
+.captureButton,
+.uploadButton,
+.retakeButton,
+.downloadButton,
+.stickerButton {
+  font-family: "Nunito", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.captureButton,
+.uploadButton,
+.retakeButton,
+.downloadButton {
+  color: #ffffff;
+  background-color: var(--color-primary, #1a56db);
+  width: 10vw;
+  height: 5vh;
+  min-width: 110px;
+  min-height: 40px;
+}
+
+.uploadButton:hover,
+.retakeButton:hover,
+.downloadButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(26, 86, 219, 0.45);
+}
+
+.uploadButton:active,
+.retakeButton:active,
+.downloadButton:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.captureButton:hover,
+.captureButton:active {
+  transform: translateX(-50%);
+}
+
+/* Disabled state during upload */
+.uploadButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.uploading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 130px;
+}
+
+/* Sticker / clear button */
+.stickerButton {
+  color: #ffffff;
+  background-color: #e70303;
+  width: 10vw;
+  height: vh;
+  min-width: 110px;
+  min-height: 40px;
+}
+
+.stickerButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.4);
+}
+
+/* Upload spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Camera shutter capture button */
+.captureButton {
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  width: 4rem;
+  height: 4rem;
+  min-width: unset;
+  min-height: unset;
+  padding: 0;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 7;
+  background-color: rgba(208, 202, 202, 0.472);
+}
+
+.innerCaptureButton {
+  border-radius: 50%;
+  width: 3.15rem;
+  height: 3.15rem;
+  padding: 0;
+  position: absolute;
+  top: 6%;
+  left: 6%;
+  z-index: 7;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 3px solid #ffffff;
+  transition: background-color 0.1s ease;
+}
+
+.innerCaptureButton:active {
+  background-color: rgba(200, 200, 200, 0.9);
+}
+
+/* ─────────────────────────────────────────
+  INITIAL BUTTONS BAR
+───────────────────────────────────────── */
+.initialButtons {
+  margin: auto;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 64.5vw;
+  margin-top: 1rem;
+}
+
+.showUpload {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─────────────────────────────────────────
+   STICKER PANEL
+───────────────────────────────────────── */
+.stickerContainer {
+  background-color: #1e293b;
+  display: flex;
+  flex-wrap: wrap;
+  height: 71vh;
+  padding: 0.75rem;
+  border-radius: 12px 0 0 12px;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ─────────────────────────────────────────
+   COUNTDOWN
+───────────────────────────────────────── */
+.countdown {
+  font-size: 22em;
+  color: white;
+  text-shadow: -4px -4px 0 black, 4px -4px 0 black, -4px 4px 0 black,
+    4px 4px 0 black, 0 0 15px black;
+  position: absolute;
+  top: 30vh;
+  left: 38.5%;
+  z-index: 100;
+}
+
+/* ─────────────────────────────────────────
+   PHOTOBOOTH CONTAINER IMG (cow/asset)
+───────────────────────────────────────── */
+.photoboothcontainer img {
+  width: 10em;
+  position: absolute;
+  top: 21vh;
+  left: 8%;
+  z-index: 100;
+}
+
+/* ─────────────────────────────────────────
+   MOBILE  ≤ 768px
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .h1 {
+    font-size: 0.95em;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    width: 90vw;
+    margin-bottom: -4vh;
+  }
+
+  .photoboothcontainer img {
+    width: 7.5em;
+    position: relative;
+    top: 2rem;
+    left: 0.75rem;
+    z-index: 100;
+    height: auto;
+  }
+
+  .initialButtons {
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    width: 88vw;
+    border-radius: 8px;
+  }
+
+  .captureButton {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    z-index: 7;
+    background-color: rgba(255, 255, 255, 0);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .innerCaptureButton {
+    width: 3.15rem;
+    height: 3.15rem;
+  }
+
+  .emojiButton {
+    color: white;
+    position: relative;
+    z-index: 12;
+    left: 85%;
+    top: 10%;
+    display: block;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    margin: auto;
+  }
+
+  .canvasContainer {
+    width: 90vw;
+    height: 62.5vh;
+  }
+
+  .photobuttons,
+  .photoboothbuttons,
+  .initialButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .uploadButton,
+  .retakeButton,
+  .downloadButton {
+    width: 50vw;
+    height: 5vh;
+  }
+
+  .stickerGrid {
+    height: 50vh;
+    max-width: 300px;
+  }
+
+  .countdown {
+    font-size: 15em;
+    top: 32vh;
+    left: 40vw;
+  }
+
+  .stickerContainer {
+    position: absolute;
+    margin: auto;
+    top: 18vh;
+    z-index: 100;
+    width: 88vw;
+    height: 70vh;
+    border-radius:0;
+  }
+
+  .stickerContainer.hidden {
+    display: none;
+  }
+
+  .stickerClose {
+    position: absolute;
+    top: 2.25rem;
+    left: 80vw;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .stickerClose span {
+    position: absolute;
+    width: 2rem;
+    height: 0.2rem;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .stickerClose span:first-child {
+    transform: rotate(45deg);
+  }
+
+  .stickerClose span:last-child {
+    transform: rotate(-45deg);
+  }
+
+  .photoboothbuttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    width: 80vw;
+    margin: auto;
+    padding: auto;
+    padding-left: 2.5rem;
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+  }
+
+  .stickerButton {
+    width: 33vw !important;
+    height: 5vh;
+  }
+
+  .downloadButton {
+    width: 33vw !important;
+  }
+
+  .showUpload {
+    width: 33vw !important;
+  }
+
+  .retakeButton {
+    width: 33vw !important;
+  }
+}
+
+/* ─────────────────────────────────────────
+   TABLET  769–1023px
+───────────────────────────────────────── */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .countdown {
+    font-size: 22em;
+    top: 30vh;
+    left: 33vh;
+  }
+
+  .photoboothcontainer img {
+    width: 10em;
+    position: absolute;
+    top: 30.5vh;
+    left: 2.5vw;
+    z-index: 100;
+  }
+
+  .photoboothbuttons {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 80vw;
+  }
+
+  .uploadButton,
+  .retakeButton,
+  .downloadButton {
+    width: 16vw;
+  }
+
+  .captureButton {
+    top: 80% !important;
+  }
+}
+
+/* landscape short screens */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .photoboothcontainer img {
+    top: 60.5vh !important;
+  }
+
+  .captureButton {
+    top: 107% !important;
+  }
+
+  .uploadButton,
+  .retakeButton,
+  .stickerButton,
+  .downloadButton {
+    height: 6vw;
+  }
+
+  .countdown {
+    font-size: 10em;
+    top: 78%;
+    left: 37%;
+  }
+}

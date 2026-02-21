@@ -1,0 +1,297 @@
+/* ─────────────────────────────────────────
+   WRAPPER  (full-page background)
+───────────────────────────────────────── */
+.formSection {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3vh 1rem;
+  background-image: url("/images/formBackground2.png");
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ─────────────────────────────────────────
+   CARD
+───────────────────────────────────────── */
+.formContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem 1.75rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+  border: 1px solid var(--color-border, #e2e8f0);
+}
+
+/* ─────────────────────────────────────────
+   TITLE
+───────────────────────────────────────── */
+.logInTitle {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text, #0f172a);
+  text-align: center;
+}
+
+/* ─────────────────────────────────────────
+   INPUTS
+───────────────────────────────────────── */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.inputGroup label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.4rem;
+  color: var(--color-text, #0f172a);
+}
+
+.inputGroup input {
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--color-border, #e2e8f0);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background-color: #f8fafc;
+  color: var(--color-text, #0f172a);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputGroup input::placeholder {
+  color: var(--color-text-muted, #94a3b8);
+  opacity: 1;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: var(--color-primary, #1a56db);
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.15);
+  background-color: #ffffff;
+}
+
+/* ─────────────────────────────────────────
+   FORGOT PASSWORD
+───────────────────────────────────────── */
+.forgotPassword {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--color-primary, #1a56db);
+  text-decoration: none;
+  align-self: flex-end;
+  font-weight: 600;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+/* ─────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────── */
+.buttonRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem auto 0.5rem;
+}
+
+.submitButton {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  background-color: var(--color-primary, #1a56db);
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.submitButton:hover {
+  background-color: var(--color-primary-dark, #1d4ed8);
+  transform: translateY(-1px);
+}
+
+/* Ghost button for guest login */
+.guestButton {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  background-color: transparent;
+  color: var(--color-primary, #1a56db);
+  font-weight: 700;
+  border: 1.5px solid var(--color-primary, #1a56db);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.guestButton:hover {
+  background-color: var(--color-primary, #1a56db);
+  color: #ffffff;
+}
+
+/* ─────────────────────────────────────────
+   FOOTER LINKS
+───────────────────────────────────────── */
+.createAccountText {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #475569);
+  margin-top: 0.75rem;
+}
+
+.createAccountLink {
+  color: var(--color-primary, #1a56db);
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 0.25rem;
+}
+
+.createAccountLink:hover {
+  text-decoration: underline;
+}
+
+/* ─────────────────────────────────────────
+   ERROR MESSAGE
+───────────────────────────────────────── */
+.errorMessage {
+  color: #991b1b;
+  background-color: #fef2f2;
+  border-left: 4px solid var(--color-error, #ef4444);
+  padding: 0.65rem 0.9rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+/* ─────────────────────────────────────────
+   LOADING
+───────────────────────────────────────── */
+.loadingText {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-text-muted, #475569);
+}
+
+/* ─────────────────────────────────────────
+   LOGGED-IN VIEW
+───────────────────────────────────────── */
+.loggedInSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("/images/formBackground2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.loggedInContainer {
+  text-align: center;
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--color-border, #e2e8f0);
+  max-width: 380px;
+  width: 90%;
+}
+
+.loggedInTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text, #0f172a);
+}
+
+.loggedInText {
+  font-size: 1rem;
+  margin: 0.75rem 0 1.5rem;
+  color: var(--color-text-muted, #475569);
+}
+
+.userEmail {
+  font-weight: 700;
+  color: var(--color-primary, #1a56db);
+}
+
+.logoutButton {
+  background-color: var(--color-primary, #1a56db);
+  color: #ffffff;
+  padding: 0.65rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.logoutButton:hover {
+  background-color: var(--color-primary-dark, #1d4ed8);
+}
+
+.profilePictureContainer {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.profilePicture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-primary, #1a56db);
+  box-shadow: 0 4px 16px rgba(26, 86, 219, 0.25);
+}
+
+/* ─────────────────────────────────────────
+   MOBILE
+───────────────────────────────────────── */
+@media only screen and (max-width: 768px) {
+  .formSection {
+    padding: 3vh 1rem;
+    background-image: url("/images/formBackground3.png");
+  }
+
+  .formContainer {
+    padding: 1.5rem 1.25rem;
+    width: 88%;
+  }
+
+  .logInTitle {
+    font-size: 1.4rem;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .submitButton,
+  .guestButton {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .loggedInSection {
+    min-height: 60vh;
+    background-image: url("/images/formBackground2.png");
+  }
+}

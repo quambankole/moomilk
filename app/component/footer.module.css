@@ -1,0 +1,76 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  background-color: rgba(26, 86, 219, 0.93);
+  padding: 1.8rem 5vw;
+  box-shadow: 0 4px 6px #000000;
+  flex-wrap: wrap;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImage {
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.copyright {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialMedia a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.socialMedia a:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2.2rem 1rem;
+  }
+
+  .logoImage {
+    width: 95px;
+    height: 95px;
+  }
+
+  .copyright {
+    font-size: 1rem;
+    white-space: normal;
+  }
+
+  .socialMedia {
+    gap: 1.5rem;
+  }
+
+  .socialMedia a {
+    font-size: 1.9rem;
+  }
+}

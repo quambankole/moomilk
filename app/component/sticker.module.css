@@ -1,0 +1,88 @@
+.stickerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.stickerContainer h2 {
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+}
+
+.stickerGrid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  width: 15vw;
+  height: auto;
+  border: none;
+  overflow-y: scroll;
+  margin: 0.2rem auto;
+}
+
+.sticker {
+  padding: 0;
+  border-radius: 10px;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  border: 3px solid rgb(0, 0, 0);
+  background-color: #fcf9e9;
+}
+
+.sticker.active:hover {
+  transform: scale(1.1);
+}
+
+.sticker.disabled {
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .stickerContainer {
+    width: 87vw;
+    padding: 0.75rem;
+    overflow-y: scroll;
+    background-color: #f2f3f6;
+    height: 68vh;
+  }
+
+  .stickerGrid {
+    width: 100vw;
+    height: 55vh;
+    max-width: 20rem;
+    border-radius: 4px;
+    gap: 1.2rem;
+    padding: 0rem 0rem;
+    background-color: #ffffff;
+  }
+
+  .sticker {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .stickerGrid {
+    height: 70vh;
+  }
+}
+
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .stickerGrid {
+    height: 83vh;
+  }
+}

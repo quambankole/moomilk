@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+  --color-primary:      #1a56db;
+  --color-primary-dark: #1d4ed8;
+  --color-accent:       #06b6d4;
+  --color-bg:           #f8fafc;
+  --color-surface:      #ffffff;
+  --color-text:         #0f172a;
+  --color-text-muted:   #475569;
+  --color-border:       #e2e8f0;
+  --color-error:        #ef4444;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  margin: 0;
+}
+
+h1, h2{
+  font-family: "Nunito", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 800 !important;
+}
+
+h1{
+  font-size: 2.2rem ;
+}
+
+h2{
+  font-size: 1.2rem;
+}
+
+p{
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+}
+
+div{
+  font-family: "Nunito", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+header, footer {
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.navItem {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.2s ease-in-out;
+}
+
+.navItem::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 2px;
+}
+
+.navItem:hover::after {
+  transform: scaleX(1);
+}
+
+.navItem a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  display: block;
+  transition: all ease-in-out;
+  font-size: 1em;
+}
+
+.navItem.active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.navItem.active::after {
+  transform: scaleX(1);
+  background-color: white;
+}
+
+
+@media screen and (max-width: 767px) {
+
+  .nav{
+    padding-top: 0;
+  }
+
+  .navItem a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    display: block;
+    transition: all ease-in-out;
+  }
+
+  .navItem::after {
+    display: none;
+  }
+
+  .navItem.active {
+    color: white;
+    font-weight: 700;
+    background-color: var(--color-primary);
+    border-radius: 0;
+    padding: 12px 18px;
+    margin: 0;
+  }
+
+  .navItem.active a {
+    color: white;
+  }
+
+}

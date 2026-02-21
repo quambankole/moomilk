@@ -1,0 +1,157 @@
+.aboutContainer {
+  text-align: center;
+  font-family: helvetica, sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.aboutTextbox,
+.aboutImage {
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.7);
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.aboutContent:hover {
+  transform: translateY(-10px);
+}
+
+.aboutContent:hover .aboutTextbox,
+.aboutContent:hover .aboutImage {
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+}
+
+/* Headings */
+.aboutTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  color: #0c3b7b;
+}
+
+.aboutSubtitle {
+  font-size: 3rem;
+  color: #f3f3f3;
+  line-height: 50px;
+  margin-bottom: 1.3rem;
+}
+
+/* Paragraphs */
+.aboutText {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #f3f3f3;
+}
+
+.aboutText1 {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #0c3a7b9e;
+}
+
+/* Highlighted Words */
+.highlight {
+  font-weight: bold;
+  color: yellow;
+  font-size: 1.32rem; /* 10% bigger */
+}
+
+/* Summary */
+.aboutSummary {
+  width: 45%;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+  color: #0c3b7b;
+}
+
+/* Section Containers */
+.aboutContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  height: auto;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.aboutContent:hover {
+  transform: translateY(-10px);
+}
+
+/* Textbox */
+.aboutTextbox {
+  flex: 1;
+  background-color: #0c3b7b;
+  text-align: left;
+  padding: 2rem;
+  /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.37); */
+  height: auto;
+}
+
+/* Image Containers */
+.aboutImage {
+  width: 26.75rem;
+  height: 28.75rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.8); */
+}
+
+/* Image Styling */
+.aboutImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .aboutContent {
+    flex-direction: column;
+    height: auto;
+    width: 22.5rem;
+  }
+
+  .aboutSummary {
+    width: 80%;
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutSubtitle {
+    font-size: 1.6em;
+    line-height: 1.2;
+  }
+
+  .aboutTextbox {
+    width: 80vw;
+    height: auto;
+  }
+
+  .aboutImage {
+    width: 70vw;
+    height: 50vh;
+    order: -1;
+  }
+
+  .aboutText {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .aboutText1 {
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 80%;
+  }
+
+  .highlight {
+    font-weight: bold;
+    color: yellow;
+    font-size: 1.1rem; /* 10% bigger */
+  }
+}

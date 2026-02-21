@@ -1,0 +1,124 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    background-color: rgba(26, 86, 219, 0.93);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 16px rgba(26, 86, 219, 0.18);
+    transition: background-color 0.3s ease;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 3vw;
+}
+
+.logoImage {
+    width: 100px;
+    height: auto;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+/* Hamburger — three CSS-drawn lines */
+.menuButton {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 1001;
+}
+
+.menuButton span {
+    display: block;
+    width: 26px;
+    height: 2.5px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menuButton.open span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+.menuButton.open span:nth-child(2) {
+    opacity: 0;
+}
+.menuButton.open span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+
+@media (max-width: 768px) {
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 1.15rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .menuButton {
+        display: flex;
+    }
+
+    .nav {
+        /* slide-down via max-height transition */
+        display: flex;
+        overflow: hidden;
+        max-height: 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 240px;
+        background-color: white;
+        flex-direction: column;
+        align-items: stretch;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        border-radius: 0 0 12px 12px;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+    }
+
+    .navOpen {
+        max-height: 400px;
+        opacity: 1;
+    }
+
+    .navList {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+        gap: 0;
+    }
+}
