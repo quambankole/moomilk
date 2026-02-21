@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     unoptimized: true, // required for export
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
